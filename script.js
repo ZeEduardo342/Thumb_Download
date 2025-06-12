@@ -119,9 +119,7 @@ function copiarConvertido(link) {
     .catch(() => {
       document.getElementById('copy-status').textContent = 'Erro ao copiar!';
     });
-    document.getElementById('converter-group').innerHTML += `
-  <button class="btn-reset2" onclick="resetApp2()">Converter outro link</button>
-`;
+    
 }
 
 function resetApp2() {
