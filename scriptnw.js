@@ -85,6 +85,9 @@ function resetApp() {
   document.getElementById('search-group').classList.remove('hide');
   document.getElementById('ytlink').value = '';
   document.getElementById('ytlink').focus();
+
+  document.getElementById('shorts-link').value = '';
+  document.getElementById('converted-link').innerHTML = '';
 }
 
 function converterLink() {
