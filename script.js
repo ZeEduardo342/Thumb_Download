@@ -86,3 +86,51 @@ function resetApp() {
   document.getElementById('ytlink').value = '';
   document.getElementById('ytlink').focus();
 }
+
+function converterLink() {
+  const input = document.getElementById('shorts-link').value.trim();
+  const regex = /(?:https?:\/\/)?(?:www\.)?youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/;
+  const match = input.match(regex);
+
+  if (match && match[1]) {
+    const normalLink = `https://youtube.com/watch?v=${match[1]}`;
+    document.getElementById('converted-link').innerHTML =
+      `<span style="color:#fff;">Link convertido:</span> <a href="${normalLink}" style="color:#00A03C;" target="_blank">${normalLink}</a>
+       <div style="text-align:center; margin-top: 0.2em;">
+         <button class="btn-copy" onclick="copiarConvertido('${normalLink}')">Copiar link</button>
+         <span id="copy-status" style="margin-left: 10px; color: #00A03C;"></span>
+         <br>
+         <button class="btn-reset2" style="margin-top:1em;" onclick="resetApp2()">Converter outro link</button>
+       </div>`;
+  } else {
+    document.getElementById('converted-link').innerHTML =
+      `<span style="color:#f44;">Link inválido de Shorts!</span>`;
+  }
+}
+
+// Função auxiliar para copiar para a área de transferência
+function copiarConvertido(link) {
+  // Copia o link usando a API moderna do navegador
+  navigator.clipboard.writeText(link)
+    .then(() => {
+      document.getElementById('copy-status').textContent = 'Copiado!';
+      
+    })
+    .catch(() => {
+      document.getElementById('copy-status').textContent = 'Erro ao copiar!';
+    });
+    document.getElementById('converter-group').innerHTML += `
+  <button class="btn-reset2" onclick="resetApp2()">Converter outro link</button>
+`;
+}
+
+function resetApp2() {
+  document.getElementById('thumb').innerHTML = '';
+  document.getElementById('search-group').classList.remove('hide');
+  document.getElementById('ytlink').value = '';
+  document.getElementById('ytlink').focus();
+
+
+  document.getElementById('shorts-link').value = '';
+  document.getElementById('converted-link').innerHTML = '';
+}

@@ -3,19 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <title>PMD Thumb</title>
+  <title>Thumb Downloader</title>
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h2>PMD Thumb</h2>
+    <h2>Thumb Downloader</h2>
     <div id="search-group">
       <input type="text" id="ytlink" autocomplete="off" placeholder="Cole o link do vídeo aqui" size="40">
       <button onclick="showThumbs()">Procurar</button>
     </div>
     <div id="thumb"></div>
+
+     
   </div>
   <script src="script.js"></script>
+ 
+<div id="converter-group" class="converter-block">
+  <h2>Conversor de link</h2>
+  <div class="converter-row">
+      <input type="text" id="shorts-link" autocomplete="off" placeholder="Cole o link do Shorts aqui" size="40">
+      <button onclick="converterLink()">Converter</button>
+      </div>
+      <div id="converted-link"></div>
+    </div>
+
 </body>
 </html>
