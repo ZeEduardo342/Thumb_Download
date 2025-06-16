@@ -1,3 +1,20 @@
+function showTab(tab) {
+  // Tabs
+  document.getElementById('page-thumb').classList.add('hide');
+  document.getElementById('page-converter').classList.add('hide');
+  document.getElementById('tab-thumb').classList.remove('active');
+  document.getElementById('tab-converter').classList.remove('active');
+
+  if(tab === 'thumb') {
+    document.getElementById('page-thumb').classList.remove('hide');
+    document.getElementById('tab-thumb').classList.add('active');
+  } else {
+    document.getElementById('page-converter').classList.remove('hide');
+    document.getElementById('tab-converter').classList.add('active');
+  }
+}
+
+
 let currentVid = "";
 
 function getVideoId(url) {
@@ -85,9 +102,6 @@ function resetApp() {
   document.getElementById('search-group').classList.remove('hide');
   document.getElementById('ytlink').value = '';
   document.getElementById('ytlink').focus();
-
-  document.getElementById('shorts-link').value = '';
-  document.getElementById('converted-link').innerHTML = '';
 }
 
 function converterLink() {
