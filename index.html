@@ -3,31 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <title>PMD Converter</title>
+  <title>Thumb Downloader</title>
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h2>Thumb Downloader</h2>
-    <div id="search-group">
-      <input type="text" id="ytlink" autocomplete="off" placeholder="Cole o link do vídeo aqui" size="40">
-      <button onclick="showThumbs()">Procurar</button>
+  <div class="tab-menu">
+    <button class="tab-btn active" id="tab-thumb" onclick="showTab('thumb')">Thumb Downloader</button>
+    <button class="tab-btn" id="tab-converter" onclick="showTab('converter')">Conversor de Link</button>
+  </div>
+  <div id="tab-content">
+    <div class="tab-page" id="page-thumb">
+      <div class="container">
+        <h2>Thumb Downloader</h2>
+        <div id="search-group">
+          <input type="text" id="ytlink" autocomplete="off" placeholder="Cole o link do vídeo aqui" size="40">
+          <button onclick="showThumbs()">Procurar</button>
+        </div>
+        <div id="thumb"></div>
+      </div>
     </div>
-    <div id="thumb"></div>
-
-     
+    <div class="tab-page hide" id="page-converter">
+      <div class="converter-block">
+        <h2>Conversor de link</h2>
+        <div class="converter-row">
+          <input type="text" id="shorts-link" autocomplete="off" placeholder="Cole o link do Shorts aqui" size="40">
+          <button onclick="converterLink()">Converter</button>
+        </div>
+        <div id="converted-link"></div>
+      </div>
+    </div>
   </div>
   <script src="scriptnw.js"></script>
- 
-<div id="converter-group" class="converter-block">
-  <h2>Conversor de link</h2>
-  <div class="converter-row">
-      <input type="text" id="shorts-link" autocomplete="off" placeholder="Cole o link do Shorts aqui" size="40">
-      <button onclick="converterLink()">Converter</button>
-      </div>
-      <div id="converted-link"></div>
-    </div>
-
 </body>
 </html>
