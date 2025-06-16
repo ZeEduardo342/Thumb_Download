@@ -1,3 +1,43 @@
+.tab-menu {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5em;
+  gap: 1.4em;
+}
+
+.tab-btn {
+  background: #222;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.08em;
+  font-weight: bold;
+  border: none;
+  border-radius: 14px 14px 0 0;
+  padding: 0.8em 2.1em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0005;
+  transition: background 0.18s, color 0.18s;
+  outline: none;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: #4e4e4e;
+  color: #ffffff;
+}
+
+.tab-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+/* O resto do seu CSS pode continuar igual! */
+
+
 html, body {
   height: 100%;
   margin: 0;
@@ -174,7 +214,7 @@ img {
   padding: 2em 1.5em;
   border-radius: 18px;
   box-shadow: 0 4px 24px #0007;
-  margin: 1.2em auto 0 auto;
+  margin: auto auto 0 auto;
 }
 
 .converter-row {
